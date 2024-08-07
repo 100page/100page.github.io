@@ -1,0 +1,11 @@
+/***** 전체 *****/
+.common-wrap {width:1200px;margin:0 auto;}
+
+
+/***** 상단 *****/
+.common-header-wrap {border-bottom:1px solid #ccc;}
+.common-nav-wrap {border-bottom:1px solid #ccc;}
+
+
+/***** 하단 *****/
+.common-footer-wrap p {text-align:center;}

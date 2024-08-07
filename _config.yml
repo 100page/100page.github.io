@@ -1,0 +1,51 @@
+exclude:
+  - .github
+  - .jekyll-cache
+  - .jekyll-metadata
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+incremental: true
+
+encoding: utf-8
+timezone: Asia/Seoul
+date_format: '%Y-%m-%d'
+
+lang: 'ko'
+title: '100page'
+description: '100page blog'
+keyword: '100page, 100page blog, github, github blog, blog, jekyll'
+color: 'black'
+
+url: ''
+baseurl: ''
+asset_url:
+  img: '/assets/img'
+  css: '/assets/css'
+  js: '/assets/js'
+
+name: 'ㅈ'
+email: 'yoojj.dev@gmail.com'
+
+page_excerpts: true
+
+collections:
+  doc:
+    output: true
+    permalink: /:collection/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: doc
+    values:
+      layout: content
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: '/page:num/'

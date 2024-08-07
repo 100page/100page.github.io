@@ -1,0 +1,37 @@
+---
+layout: default
+permalink: /tag
+---
+
+<section>
+  <h1 class="hide">블로그 태그 목록</h1>
+  
+  {% assign tags = site.doc | map: 'tags' | uniq | sort %}
+  <p class="total-post">총 태그 <b>{{ tags | size }}</b> 개</p>
+ 
+  {% for tag in tags %}
+  {% capture tag_name %}{{ tag | first }}{% endcapture %}
+  {% capture tag_size %}{{ tag | last | size }}{% endcapture %}
+  <ul>
+    <li id="{{ tag_name }}">
+      <a href="#">{{ tag_name }}</a>
+      <sub><span class="hide">해당 태그의 포스트 수</span>({{ tag_size }})</sub>
+    </li>
+  </ul>
+
+
+
+  <h3 id="{{ tag | slugify }}">{{ tag }}</h3>
+    <ul>
+      {% for doc in site.doc %}
+        {% if doc.tags contains tag %}
+          <li><a href="{{ doc.url }}">{{ doc.title | truncate: 50 }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+
+  {% endfor %}
+
+
+</section>

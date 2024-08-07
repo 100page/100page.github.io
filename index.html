@@ -1,0 +1,38 @@
+---
+layout: default
+title: 'index'
+---
+
+<section class="common-content-wrap">
+  <h2>포스트</h2>
+
+
+{% if paginator.total_posts == 0 %}
+  <p>등록된 글이 없습니다.</p>
+{% else %}
+  <p class="total-post">총 포스트 <b>{{ paginator.total_posts }}</b> 개</p>
+
+  <ul>
+  {% for post in paginator.posts %}
+    <li>
+    <p class="post-list-date">{{ post.date | date: site.date_format }}</p>
+    <p class="post-list-title">
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </p>
+    <p class="post-list-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.content | truncatewords: 50 | strip_html }}</a>
+    </p>
+    <p class="post-list-tag">
+    {% if post %}{% assign tags = post.tags %}{% for tag in tags %}
+    <a href="/tag#{{ tag | slugize }}">{{tag}}</a>{% unless forloop.last %}{% endunless %}
+    {% endfor %}{% endif %}
+    </p>
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}
+
+{% include pagination.html %}
+
+</section>
+<hr>

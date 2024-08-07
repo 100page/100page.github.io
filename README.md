@@ -2,15 +2,11 @@
 : 깃허브에서 지원하는 정적 사이트 호스팅 서비스  
 
 - jekyll
+- hugo
 - hexo 
 - next
 - nuxt
 - gatsbyjs
-
-
-**guide**   
-https://guides.github.com/features/pages/   
-https://docs.github.com/en/github/working-with-github-pages/getting-started-with-github-pages
 
 
 
@@ -28,6 +24,10 @@ jekyll new example
 cd example 
 bundle exec jekyll serve
 
+bundle exec jekyll serve --watch
+bundle exec jekyll serve --livereload
+bundle exec jekyll serve --incremental
+
 
 # 정적 사이트 생성
 jekyll build
@@ -35,7 +35,11 @@ jekyll build
 # 변화를 감지해 재생성
 jekyll build --watch
 
+# 빌드 과정 분석
+jekyll build --profile
+
+
 # 실행
 jekyll serve
-localhost:4000
+>> localhost:4000
 ```

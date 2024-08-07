@@ -1,0 +1,16 @@
+<head>
+<meta charset="{{ site.encoding | default: "utf-8" }}">
+<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="{{ site.color }}">
+<meta name="description" content="{{ page.title | site.description | escape }}">
+<meta name="keywords" content="{{ page.keyword | site.keyword | escape }}">
+
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="stylesheet" href="{{ site.asset_url.css }}/base.css">
+<link rel="stylesheet" href="{{ site.asset_url.css }}/common.css">
+
+<link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+
+</head>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="{{ lang | default: site.lang }}">
+{% include head.html %}
+<body>
+
+
+<div class="common-wrap">
+
+  <header class="common-header-wrap">
+    <h1 class="header-title">
+      <a href="{{ "/" | relative_url }}"> index</a>
+    </h1>
+  </header>
+  <hr>
+
+  <nav class="common-nav-wrap">
+    <h2 class="hide">바로가기</h2>
+    <ul>
+    {% assign doc_items = site.doc | sort: "order" %}
+    {% for item in doc_items %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </nav>
+  <hr>
+
+  <div class="common-content-wrap">
+  {{ content }}
+  </div>
+  <hr>
+
+  <footer class="common-footer-wrap">
+    <p>{{ site.name }} &#169; 2024</p>
+  </footer>
+  <hr>
+
+</div>
+
+</body>
+</html>
